@@ -75,7 +75,7 @@ export const pageQuery =  graphql`
             }
           }
           acf {
-            imagem_grandona {
+            featured_image {
               localFile {
                 childImageSharp {
                   fluid(maxWidth:600) {

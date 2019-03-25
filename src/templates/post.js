@@ -35,36 +35,7 @@ export const pageQuery = graphql`
       title
       id
       content
-      author {
-        acf {
-          facebook
-        }
-      }
       path
-    }
-    allWordpressWpApiMenusMenusItems(filter: {slug: {eq: "menu"}}) {
-      edges {
-        node {
-          name
-          items {
-            title
-            url
-            type
-            wordpress_children {
-              title
-              url
-              object
-              object_slug
-              wordpress_children {
-                title
-                url
-                object
-                object_slug
-              }
-            }
-          }
-        }
-      }
     }
     site {
       siteMetadata {
