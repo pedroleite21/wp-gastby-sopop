@@ -532,13 +532,21 @@ body {
   z-index: 1;
   background:#fefefe;
   width: 40%;
+  border-radius: 3px;
+  margin: 0 0 20px 10px;
+  border-bottom: 5px solid #00838f;
+  box-shadow: rgba(46, 41, 51, 0.08) 0px 1px 2px, rgba(71, 63, 79, 0.08) 0px 2px 4px;
 }
 
 .post-index .thumb-img{
   position: relative;
   overflow: hidden;
-  border-bottom: 1px solid #c3c4c8;
+  border-bottom: 1px solid rgba(46, 41, 51, 0.08);
   z-index: 1;
+}
+
+.post-index .thumb-img a .gatsby-image-wrapper picture img{
+  border-radius: 3px 3px 0 0;
 }
 
 .author-img {
@@ -556,6 +564,7 @@ body {
 .posts {
   float:left;
   width:80%;
+  margin-left:-10px;
 }
 
 .sidebar {
