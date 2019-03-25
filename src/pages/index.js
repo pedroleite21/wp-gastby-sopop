@@ -1,11 +1,11 @@
-import React , { Component } from "react"
+import React, { Component } from "react"
 import { Link, graphql } from "gatsby"
-import Img from "gatsby-image"
 import Masonry from 'react-masonry-component'
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import Slider from "../components/slider";
+import IndexPosts from "../components/indexPosts";
 
 class Home extends Component {
   render() {
@@ -14,55 +14,37 @@ class Home extends Component {
     console.log(posts)
     return (
       <Layout>
-      <SEO title="Home" keywords={[`gatsby`, `application`, `react`]} />
+        <SEO title="Home" keywords={[`gatsby`, `application`, `react`]} />
 
-      <Slider />
-      <div style={{display: `flex` }}>
-        <section className="posts">
-          <Masonry className="masonry">
-            {posts.edges.map(({ node }) => (
-            <div key={node.slug} className="post-index">
+        <Slider />
 
-            {node.acf.featured_image && (
-              <div>
-                <div className="thumb-img"> 
-                  <Link to={`/${node.slug}`}>
-                    <Img fluid={node.acf.featured_image.localFile.childImageSharp.fluid} />
-                  </Link>
-                </div>
+        <div style={{ display: `flex` }}>
+          <section className="posts">
+            <Masonry className="masonry">
+              {posts.edges.map(({ node }, index) => (
+                <IndexPosts key={node.slug} posts={node} index={index}/>
+              ))}
+            </Masonry>
+          </section>
 
-                <img alt={node.author.name} src={node.author.avatar_urls.wordpress_96} className="author-img"/>
-              </div>
-            )}
-
-              <Link to={`/${node.slug}`}>
-                <h3>{node.title}</h3>
-              </Link>
-              
-              <p>{node.excerpt}</p>
+          <section className="sidebar">
+            <div>
+              <h1>oi</h1>
             </div>
-            ))}
-          </Masonry>
-        </section>
-
-        <section className="sidebar">
-        <div>
-          <h1>oi</h1>
+          </section>
         </div>
-        </section>
-      </div>
-    
-      <Link to="/page-2/">Go to page 2</Link>
-    </Layout>
+
+        <Link to="/page-2/">Go to page 2</Link>
+      </Layout>
     )
   }
 }
 
 export default Home
 
-export const pageQuery =  graphql`
+export const pageQuery = graphql`
   query {
-    allWordpressPost(sort: { fields: [date] }) {
+    allWordpressPost(sort: { fields: [date], order: DESC }) {
       edges {
         node {
           title

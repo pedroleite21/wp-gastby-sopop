@@ -511,12 +511,13 @@ body {
 
 .wrapper {
   margin: 0 auto;
-  width:80%;
+  width: 90%;
 }
 
 .button-collapsiblemenu {
   position: fixed;
-  padding-top:40px;
+  padding-top:calc(30px + 1.45rem);
+  left:-3px;
 }
 
 .top-bar {
@@ -570,12 +571,12 @@ body {
 .menu ul li {
   display: inline-block;
   margin:0;
-  padding-right:20px;
+  padding: 0 20px 10px 0;
   position: relative;
 }
 
 .menu ul li:last-child {
-  padding:0;
+  padding-right:0;
 }
 
 .menu ul li a {
@@ -616,9 +617,13 @@ body {
 .menu ul li ul.dropdown {
   position: absolute;
   background: #fefefe;
-  top: calc(100% + 8px);
+  top: calc(100% - 2px);
   width: calc(100% + -20px);
   z-index:3000;
+}
+
+.menu ul li:last-child ul.dropdown {
+  width: calc(100%);
 }
 
 .menu ul li ul.dropdown li {
@@ -632,6 +637,7 @@ body {
   top: 0;
   left: 100%;
   border-left: 1px solid #f5f5f5;
+  max-width:80%;
 }
 
 .menu ul li ul.dropdown li a {
@@ -640,6 +646,30 @@ body {
 
 .menu ul li ul.dropdown li a:after {
   display:none;
+}
+
+.featured-item {
+  position: relative;
+  z-index:1;
+}
+
+.featured-image {
+  width:100%;
+  height:300px;
+  overflow: hidden;
+  display: block;
+}
+
+.featured-image .gatsby-image-wrapper > div {
+  padding-bottom: 300px !important /* your aspect ratio */
+}
+
+.featured-info {
+  position: absolute;
+  z-index:2;
+  right:20px;
+  bottom: -20px;
+  background: mediumpurple;
 }
 
 @import "../../node_modules/slick-carousel/slick/slick.css";
