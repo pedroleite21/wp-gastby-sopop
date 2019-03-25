@@ -1,0 +1,1 @@
+{"errors":[{"message":"Variable \"$postId\" is never used in operation \"usersPedroSitesSopopWpGatsbySrcTemplatesPostJs667155367\".","locations":[{"line":3,"column":3}]}],"pageContext":{"isCreatedByStatefulCreatePages":false,"id":"6a67f374-76f1-561c-84ed-b7530f47ae9e","postId":1}}
