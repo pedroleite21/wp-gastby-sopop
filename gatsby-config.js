@@ -30,7 +30,7 @@ module.exports = {
     {
       resolve: "gatsby-source-wordpress",
       options: {
-        baseUrl: "localhost:81/sopop/",
+        baseUrl: "quaseastronauta.000webhostapp.com/",
         protocol: "http",
         hostingWPCOM: false,
         useACF: true,
