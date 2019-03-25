@@ -23,11 +23,11 @@ class Home extends Component {
             {posts.edges.map(({ node }) => (
             <div key={node.slug} className="post-index">
 
-            {node.acf.imagem_grandona && (
+            {node.acf.featured_image && (
               <div>
                 <div className="thumb-img"> 
                   <Link to={`/${node.slug}`}>
-                    <Img fluid={node.acf.imagem_grandona.localFile.childImageSharp.fluid} />
+                    <Img fluid={node.acf.featured_image.localFile.childImageSharp.fluid} />
                   </Link>
                 </div>
 

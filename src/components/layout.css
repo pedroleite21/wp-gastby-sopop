@@ -616,9 +616,9 @@ body {
 .menu ul li ul.dropdown {
   position: absolute;
   background: #fefefe;
-  width:150px;
   top: calc(100% + 8px);
-  left: calc(-50% + 25px);
+  width: calc(100% + -20px);
+  z-index:3000;
 }
 
 .menu ul li ul.dropdown li {
