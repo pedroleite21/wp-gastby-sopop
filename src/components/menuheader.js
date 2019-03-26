@@ -85,16 +85,15 @@ class MenuHeader extends Component {
                         items {
                         title
                         url
-                        object_slug
                         type
                         wordpress_children {
                             title
                             object
-                            object_slug
+                            url
                             wordpress_children {
                             title
                             object
-                            object_slug
+                            url
                             }
                         }
                         }

@@ -5,32 +5,28 @@ import Img from "gatsby-image"
 class IndexPosts extends Component {
     render() {
         let node = this.props.posts;
-
-        if (this.props.index) {
-            return (
-                <article className="post-index">
-                    {node.acf.featured_image && (
-                        <div>
-                            <div className="thumb-img">
-                                <Link to={`/${node.slug}`}>
-                                    <Img fluid={node.acf.featured_image.localFile.childImageSharp.fluid} />
-                                </Link>
-                            </div>
-
-                            <img alt={node.author.name} src={node.author.avatar_urls.wordpress_96} className="author-img" />
+        
+        return (
+            <article className="post-index">
+                {node.acf.featured_image && (
+                    <div>
+                        <div className="thumb-img">
+                            <Link to={`/${node.slug}`}>
+                                <Img fluid={node.acf.featured_image.localFile.childImageSharp.fluid} />
+                            </Link>
                         </div>
-                    )}
 
-                    <Link to={`/${node.slug}`}>
-                        <h3>{node.title}</h3>
-                    </Link>
+                        {/* <img alt={node.author.name} src={node.author.avatar_urls.wordpress_96} className="author-img" /> */}
+                    </div>
+                )}
 
-                    <div dangerouslySetInnerHTML={{ __html: node.excerpt }}></div>
-                </article >
-            )
-        } else {
-            return null;
-        }
+                <Link to={`/${node.slug}`}>
+                    <h3>{node.title}</h3>
+                </Link>
+
+                <div dangerouslySetInnerHTML={{ __html: node.excerpt }}></div>
+            </article >
+        )
     }
 }
 

@@ -15,29 +15,29 @@
         "path": "/404/"
     },
     {
-        "componentChunkName": "component---src-templates-post-js",
-        "jsonName": "accusamus-possimus-earum-saepe-quidem-9ef",
-        "path": "/accusamus-possimus-earum-saepe-quidem/"
-    },
-    {
-        "componentChunkName": "component---src-templates-post-js",
-        "jsonName": "blanditiis-labore-neque-soluta-esse-85e",
-        "path": "/blanditiis-labore-neque-soluta-esse/"
+        "componentChunkName": "component---src-templates-page-js",
+        "jsonName": "category-filmes-833",
+        "path": "/category/filmes"
     },
     {
         "componentChunkName": "component---src-templates-page-js",
-        "jsonName": "category-sem-categoria-fb7",
-        "path": "/category/sem-categoria"
+        "jsonName": "category-musica-902",
+        "path": "/category/musica"
     },
     {
-        "componentChunkName": "component---src-templates-post-js",
-        "jsonName": "consequatur-voluptatem-distinctio-reiciendis-nesciunt-ffd",
-        "path": "/consequatur-voluptatem-distinctio-reiciendis-nesciunt/"
+        "componentChunkName": "component---src-templates-page-js",
+        "jsonName": "category-reviews-c5a",
+        "path": "/category/reviews"
     },
     {
-        "componentChunkName": "component---src-templates-post-js",
-        "jsonName": "culpa-quas-maiores-suscipit-laudantium-vitae-ebf",
-        "path": "/culpa-quas-maiores-suscipit-laudantium-vitae/"
+        "componentChunkName": "component---src-templates-page-js",
+        "jsonName": "category-series-4cf",
+        "path": "/category/series"
+    },
+    {
+        "componentChunkName": "component---src-templates-page-js",
+        "jsonName": "category-uncategorized-515",
+        "path": "/category/uncategorized"
     },
     {
         "componentChunkName": "component---cache-dev-404-page-js",
@@ -46,28 +46,8 @@
     },
     {
         "componentChunkName": "component---src-templates-post-js",
-        "jsonName": "magni-et-quisquam-quis-2b5",
-        "path": "/magni-et-quisquam-quis/"
-    },
-    {
-        "componentChunkName": "component---src-templates-post-js",
-        "jsonName": "nesciunt-est-similique-quos-quos-minima-bd6",
-        "path": "/nesciunt-est-similique-quos-quos-minima/"
-    },
-    {
-        "componentChunkName": "component---src-templates-post-js",
-        "jsonName": "odio-asperiores-voluptatem-vel-ipsum-commodi-numquam-f9a",
-        "path": "/odio-asperiores-voluptatem-vel-ipsum-commodi-numquam/"
-    },
-    {
-        "componentChunkName": "component---src-templates-post-js",
-        "jsonName": "odio-non-rerum-dolorum-rerum-366",
-        "path": "/odio-non-rerum-dolorum-rerum/"
-    },
-    {
-        "componentChunkName": "component---src-templates-post-js",
-        "jsonName": "ola-mundo-441",
-        "path": "/ola-mundo/"
+        "jsonName": "hello-world-8bc",
+        "path": "/hello-world/"
     },
     {
         "componentChunkName": "component---src-pages-page-2-js",
@@ -76,27 +56,12 @@
     },
     {
         "componentChunkName": "component---src-templates-page-js",
-        "jsonName": "pagina-exemplo-90d",
-        "path": "/pagina-exemplo/"
-    },
-    {
-        "componentChunkName": "component---src-templates-post-js",
-        "jsonName": "quis-est-nostrum-amet-molestiae-dolorum-quisquam-c84",
-        "path": "/quis-est-nostrum-amet-molestiae-dolorum-quisquam/"
-    },
-    {
-        "componentChunkName": "component---src-templates-post-js",
-        "jsonName": "similique-quia-enim-eveniet-voluptatem-9f6",
-        "path": "/similique-quia-enim-eveniet-voluptatem/"
-    },
-    {
-        "componentChunkName": "component---src-templates-post-js",
-        "jsonName": "sit-vel-velit-et-voluptatum-720",
-        "path": "/sit-vel-velit-et-voluptatum/"
+        "jsonName": "sample-page-b1e",
+        "path": "/sample-page/"
     },
     {
         "componentChunkName": "component---src-templates-page-js",
-        "jsonName": "tag-novo-411",
-        "path": "/tag/novo"
+        "jsonName": "tag-ariana-grande-f52",
+        "path": "/tag/ariana-grande"
     }
 ]

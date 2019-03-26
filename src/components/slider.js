@@ -23,12 +23,6 @@ export default class SliderPosts extends Component {
                     title
                     excerpt
                     slug
-                    author {
-                      name
-                      avatar_urls {
-                        wordpress_96
-                      }
-                    }
                     acf {
                       featured_image {
                         localFile {
