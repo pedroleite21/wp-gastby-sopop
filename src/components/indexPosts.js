@@ -16,7 +16,7 @@ class IndexPosts extends Component {
                             </Link>
                         </div>
 
-                        {/* <img alt={node.author.name} src={node.author.avatar_urls.wordpress_96} className="author-img" /> */}
+                        <img alt={node.author.name} src={node.author.avatar_urls.wordpress_96} className="author-img" />
                     </div>
                 )}
 

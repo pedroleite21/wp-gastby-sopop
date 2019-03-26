@@ -50,6 +50,12 @@ export const pageQuery = graphql`
           title
           excerpt
           slug
+          author {
+            name
+            avatar_urls {
+              wordpress_96
+            }
+          }
           acf {
             featured_image {
               localFile {
