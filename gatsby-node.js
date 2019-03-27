@@ -36,6 +36,7 @@ exports.createPages = async ({ graphql, actions }) => {
           node {
             slug
             id
+            path
           }
         }
       }
@@ -86,7 +87,7 @@ exports.createPages = async ({ graphql, actions }) => {
   const categoryTemplate = path.resolve(`./src/templates/page.js`);
   allWordpressCategory.edges.forEach(edge => {
     createPage({
-      path: `/category/${edge.node.slug}`,
+      path: edge.node.path,
       component: slash(categoryTemplate),
       context: {
         id: edge.node.id,

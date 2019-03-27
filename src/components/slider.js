@@ -47,7 +47,7 @@ export default class SliderPosts extends Component {
               {posts.map(({ node }) => {
                 if (node.acf.featured_image) {
                   return (
-                    <div key={node.slug} class="featured-item">
+                    <div key={node.slug} className="featured-item">
                       <div className="featured-image">
                         <Link
                           to={`/${node.slug}`}

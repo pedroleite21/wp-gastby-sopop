@@ -517,7 +517,9 @@ body {
 .button-collapsiblemenu {
   position: fixed;
   padding-top:calc(30px + 1.45rem);
+  z-index: 1000;
   left:-3px;
+  cursor: pointer;
 }
 
 .top-bar {
@@ -530,22 +532,26 @@ body {
 
 .post-index {
   z-index: 1;
+  width: 50%;
+  padding-left:10px;
+  margin: 0 0 20px;
+}
+
+.post-index .background {
   background:#fefefe;
-  width: 40%;
-  border-radius: 3px;
-  margin: 0 0 20px 10px;
   border-bottom: 5px solid #00838f;
+  border-radius: 3px;
   box-shadow: rgba(46, 41, 51, 0.08) 0px 1px 2px, rgba(71, 63, 79, 0.08) 0px 2px 4px;
 }
 
-.post-index .thumb-img{
+.post-index .background .thumb-img{
   position: relative;
   overflow: hidden;
   border-bottom: 1px solid rgba(46, 41, 51, 0.08);
   z-index: 1;
 }
 
-.post-index .thumb-img a .gatsby-image-wrapper picture img{
+.post-index .background .thumb-img a .gatsby-image-wrapper picture img{
   border-radius: 3px 3px 0 0;
 }
 
@@ -676,10 +682,27 @@ body {
 .featured-info {
   position: absolute;
   z-index:2;
+  height:50%;
+  width:250px;
   right:20px;
-  bottom: -20px;
-  background: mediumpurple;
+  bottom:25%;
+  background:rgba(255,255,255,0.8);
+  border-radius:3px;
+  box-shadow: rgba(46, 41, 51, 0.08) 0px 1px 2px, rgba(71, 63, 79, 0.08) 0px 2px 4px;
+  border-bottom: 5px solid #00838f;
 }
+
+.post-image-featured {
+  margin: -30px -10% 0;
+}
+
+@media only screen and (min-width: 760.98px)
+ {
+  .post-image-featured .gatsby-image-wrapper > div {
+    padding-bottom: 400px !important /* your aspect ratio */
+  }
+ }
+
 
 @import "../../node_modules/slick-carousel/slick/slick.css";
 @import "../../node_modules/slick-carousel/slick/slick-theme.css";

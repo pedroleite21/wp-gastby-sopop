@@ -2,81 +2,104 @@ import React, { Component } from "react";
 import { StaticQuery, graphql, Link } from "gatsby";
 
 class MenuHeader extends Component {
-
     state = {
         open: false,
-        openDepth2:false
+        openDepth2: false
     }
 
     openDropdown = (item, depth2 = false) => {
-        if(item.wordpress_children) {
-            if(!depth2)
-                this.setState({open: true});
-            else 
-                this.setState({openDepth2: true});
+        if (item.wordpress_children) {
+            if (!depth2)
+                this.setState({ open: true });
+            else
+                this.setState({ openDepth2: true });
         }
     }
 
     closeDropdown = (item, depth2 = false) => {
-        if(item.wordpress_children) {
-            if(!depth2)
-               this.setState({open: false});
-            else 
-                this.setState({openDepth2: false});
+        if (item.wordpress_children) {
+            if (!depth2)
+                this.setState({ open: false });
+            else
+                this.setState({ openDepth2: false });
         }
     }
 
-    renderLink = ( item ) =>(
-        <li key={item.object_slug}
-            onMouseEnter={() => this.openDropdown(item)}
-            onMouseLeave={() => this.closeDropdown(item)}
-        >
-            <Link
-                to={`/${item.object_slug}`}
-            >
-                {item.title}
-            </Link>
-            {(item.wordpress_children && this.state.open) && (
-                <ul className="dropdown">
-                    {item.wordpress_children.map((child) => (
-                        this.renderChildren(child)
-                    ))}
-                </ul>
-            )}
-        </li>
-    )
+    renderDropdownCategories = () => {
+        return (
+            <li>
 
-    renderChildren = ( child ) => {
-        return(
-        <li key={child.object_slug}
-            onMouseEnter={() => this.openDropdown(child, true)}
-            onMouseLeave={() => this.closeDropdown(child, true)}
-        >
-            <Link
-                to={`/${child.object_slug}`}
-            >
-                {child.title}
+            </li>
+        )
+    }
 
-                {(child.wordpress_children) && (
-                    <i className="material-icons">chevron_right</i>
+    renderLink = (item) => {
+        let url;
+        if (item.object === "category")
+            url = item.url.slice(17);
+        else
+            url = item.object_slug;
+
+        return (
+            <li key={url}
+                onMouseEnter={() => this.openDropdown(item)}
+                onMouseLeave={() => this.closeDropdown(item)}
+            >
+                <Link
+                    to={`/${url}`}
+                >
+                    {item.title}
+                </Link>
+                {
+                    (item.wordpress_children && this.state.open && (item.object !== "category")) && (
+                        <ul className="dropdown">
+                            {item.wordpress_children.map((child) => (
+                                this.renderChildren(child)
+                            ))}
+                        </ul>
+                    )
+                }
+            </li>
+        )
+    }
+
+    renderChildren = (child) => {
+        let url;
+        if (child.object === "category")
+            url = child.url.slice(17);
+        else
+            url = child.object_slug;
+
+        return (
+            <li key={url}
+                onMouseEnter={() => this.openDropdown(child, true)}
+                onMouseLeave={() => this.closeDropdown(child, true)}
+            >
+                <Link
+                    to={`/${url}`}
+                >
+                    {child.title}
+
+                    {(child.wordpress_children) && (
+                        <i className="material-icons">chevron_right</i>
+                    )}
+                </Link>
+                {(child.wordpress_children && this.state.openDepth2) && (
+                    <ul className="dropdown depth-2">
+                        {child.wordpress_children.map((child) => (
+                            this.renderChildren(child)
+                        ))}
+                    </ul>
+
                 )}
-            </Link>
-            {(child.wordpress_children && this.state.openDepth2) && (
-                <ul className="dropdown depth-2">
-                    {child.wordpress_children.map((child) => (
-                        this.renderChildren(child)
-                    ))}
-                </ul>
-    
-            )}
-        </li>
+            </li>
         )
     }
 
     render() {
         return (
             <StaticQuery
-            query={graphql`
+                query={graphql`
             query {
                 allWordpressWpApiMenusMenusItems(filter: {slug: {eq: "menu"}}) {
                     edges {
@@ -86,10 +109,13 @@ class MenuHeader extends Component {
                         title
                         url
                         type
+                        object
+                        object_slug
                         wordpress_children {
                             title
                             object
                             url
+                            object_slug
                             wordpress_children {
                             title
                             object
@@ -101,23 +127,22 @@ class MenuHeader extends Component {
                     }
                 }
             }`}
-        render={data => {
-            let menuItems = data.allWordpressWpApiMenusMenusItems.edges[0].node.items;
-
-            return(
-                <div className="menu">
-                    <ul>
-                            {menuItems.map((item) => { 
-                                return(
-                                    this.renderLink(item)
-                                )
-                            })}
-                    </ul>
-                </div>
-            )
-        }}
-        />
-    )
+                render={data => {
+                    let menuItems = data.allWordpressWpApiMenusMenusItems.edges[0].node.items;
+                    return (
+                        <div className="menu">
+                            <ul>
+                                {menuItems.map((item) => {
+                                    return (
+                                        this.renderLink(item)
+                                    )
+                                })}
+                            </ul>
+                        </div>
+                    )
+                }}
+            />
+        )
     }
 
 }
