@@ -26,7 +26,7 @@ const typography = new Typography({
     bodyFontFamily: ['Raleway', 'serif'],
     bodyColor: "hsla(0,0%, 0%, 0.9)",
     headerWeight:300,
-    bodyWeight:500,
+    bodyWeight:400,
     boldWeight:700,
     overrideStyles: ({ adjustFontSizeTo, scale, rhythm}, options) => ({
         body: {
@@ -39,19 +39,17 @@ const typography = new Typography({
         "a:hover, a:active": {
             color: "#00838f",
         },
-        "h1,h2,h3,h4,h5,h6": {
-            marginBottom: rhythm(2),
+        "h3, h4, h5, h6" : {
+            fontWeight:600,
         },
         h1: {
             ...scale(6 / 5),
+            fontWeight:300,
             letterSpacing: "-1.5px"
         },
         h2: {
             fontWeight: 400,
             letterSpacing: "-0.5px"
-        },
-        h3: {
-            fontWeight:500,
         },
         h4: {
             letterSpacing: "-0.25px"

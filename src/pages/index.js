@@ -18,7 +18,7 @@ class Home extends Component {
 
         <Slider />
 
-        <div style={{ display: `flex` }}>
+        <div className="main">
           <section className="posts">
             <Masonry className="masonry">
               {posts.edges.map(({ node }, index) => (
@@ -50,6 +50,12 @@ export const pageQuery = graphql`
           title
           excerpt
           slug
+          date
+          categories {
+            name
+            path
+            slug
+          }
           author {
             name
             avatar_urls {

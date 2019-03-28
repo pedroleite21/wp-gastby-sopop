@@ -31,11 +31,7 @@ const Layout = ({ children }) => (
         <div className='top-bar'></div>
         <div className='wrapper'>
           <Header siteTitle={data.site.siteMetadata.title} />
-          <div
-            style={{
-              paddingTop: `30px`,
-            }}
-          >
+          <div>
             <main>{children}</main>
             <footer>
               © {new Date().getFullYear()}, Built with

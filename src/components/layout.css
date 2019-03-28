@@ -512,6 +512,7 @@ body {
 .wrapper {
   margin: 0 auto;
   width: 90%;
+  max-width: 2000px;
 }
 
 .button-collapsiblemenu {
@@ -532,27 +533,36 @@ body {
 
 .post-index {
   z-index: 1;
-  width: 50%;
-  padding-left:10px;
+  width: 33.333%;
+  padding:0 10px;
   margin: 0 0 20px;
 }
 
 .post-index .background {
   background:#fefefe;
-  border-bottom: 5px solid #00838f;
-  border-radius: 3px;
-  box-shadow: rgba(46, 41, 51, 0.08) 0px 1px 2px, rgba(71, 63, 79, 0.08) 0px 2px 4px;
+  box-shadow: rgba(46, 41, 51, 0.08) 0px 1px 2px, rgba(71, 63, 79, 0.08) 0px 2px 4px; 
 }
 
 .post-index .background .thumb-img{
   position: relative;
   overflow: hidden;
-  border-bottom: 1px solid rgba(46, 41, 51, 0.08);
   z-index: 1;
 }
 
-.post-index .background .thumb-img a .gatsby-image-wrapper picture img{
-  border-radius: 3px 3px 0 0;
+.post-index .info {
+  border-top:5px solid #00838f;
+  padding:0 15px;
+}
+
+.post-index .info a {
+  text-decoration: none;
+  color:hsla(0, 0%, 0%, 0.9)
+}
+
+.post-index .info h3 {
+  text-align:center;
+  margin:20px 0;
+  font-weight: bold;
 }
 
 .author-img {
@@ -567,10 +577,15 @@ body {
   z-index: 2 !important;
 }
 
+.main {
+  display: flex;
+  flex-direction: row;
+  margin: 0 -10px;
+}
+
 .posts {
   float:left;
   width:80%;
-  margin-left:-10px;
 }
 
 .sidebar {
@@ -693,15 +708,59 @@ body {
 }
 
 .post-image-featured {
-  margin: -30px -10% 0;
+  max-width: 2000px;
+  margin: 0 auto;
 }
 
-@media only screen and (min-width: 760.98px)
- {
+@media only screen and (max-width: 2000px) {
+  .post-image-featured {
+    margin: 0 -10%;
+  }
+}
+
+
+@media only screen and (min-width: 760.98px) {
   .post-image-featured .gatsby-image-wrapper > div {
     padding-bottom: 400px !important /* your aspect ratio */
   }
- }
+}
+
+
+/* Extra large devices (large desktops, 1200px and down) */
+@media (max-width: 1200px) {  
+}
+
+/* Large devices (desktops, 992px and down) */
+@media (max-width: 992px) {  
+  .main {
+    flex-direction: column;
+  }
+  .posts {
+    width:100%;
+  }
+  .sidebar {
+    width:70%;
+    margin:0 auto;
+  }
+  .post-index {
+    width: 50%;
+  }
+}
+
+/* Medium devices (tablets, 768px and down) */
+@media (max-width: 768px) {  
+  .wrapper {
+    width:100%;
+  }
+  .post-index {
+    width: 100%;
+  }
+}
+
+/* Small devices (landscape phones, 576px and down) */
+@media (max-width: 576px) { 
+}
+
 
 
 @import "../../node_modules/slick-carousel/slick/slick.css";
