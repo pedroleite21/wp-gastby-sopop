@@ -10,22 +10,23 @@ var moment = require('moment');
 const linkSite = 'http://sopop.netlify.com/'
 
 const SocialMedia = ({ node }) => {
-    console.log(node);
     return (
         <div className="social-media">
-            <a className="facebook">
+            <a className="facebook" href={`https://www.facebook.com/sharer/sharer.php?u=${linkSite}${node.slug}`}>
                 <FontAwesomeIcon key='facebook' icon={faFacebookF} />
             </a>
-            <a className="twitter">
+            <a className="twitter" href={`https://twitter.com/intent/tweet?text=${node.title}&amp;url=${linkSite}${node.slug}&amp;via=SoPOP`}>
                 <FontAwesomeIcon key='twitter' icon={faTwitter} />
             </a>
             <a className="whats" href={`whatsapp://send?text=${linkSite}${node.slug}`} data-action="share/whatsapp/share">
                 <FontAwesomeIcon key='whats' icon={faWhatsapp} />
             </a>
-            <a className="pinterest">
-                <FontAwesomeIcon key='pinterest' icon={faPinterest} />
-            </a>
-            <a className="tumblr">
+            {(node.acf.featured_image) && (
+                <a className="pinterest" href={`https://pinterest.com/pin/create/button/?url=${linkSite}${node.slug}&amp;media=${linkSite}${node.acf.featured_image.localFile.childImageSharp.fluid.src}&amp;description=${node.title}`}>
+                    <FontAwesomeIcon key='pinterest' icon={faPinterest} />
+                </a>
+            )}
+            <a className="tumblr" href={`http://tumblr.com/widgets/share/tool?canonicalUrl=${linkSite}${node.slug}`}>
                 <FontAwesomeIcon key='tumblr' icon={faTumblr} />
             </a>
         </div>
