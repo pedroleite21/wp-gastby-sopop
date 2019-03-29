@@ -56,8 +56,12 @@ const typography = new Typography({
         },
         h6: {
             letterSpacing: "-0.15px"
-        }
-
+        },
+        ".button": {
+            textTransform: 'uppercase',
+            fontSize:'14px',
+            fontWeight:600
+        } 
     })
     // See below for the full list of options.
   })

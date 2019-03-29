@@ -551,7 +551,7 @@ body {
 
 .post-index .info {
   border-top:5px solid #00838f;
-  padding:0 15px;
+  padding:0 15px 20px;
 }
 
 .post-index .info a {
@@ -576,7 +576,7 @@ body {
   z-index: 2 !important;
 }
 
-.post-index .info .line {
+.post-index .info .info-meta .line {
   display: flex;
   flex-wrap:wrap;
   margin:20px 0 0;
@@ -586,7 +586,7 @@ body {
   line-height: 16px;
 }
 
-.post-index .info .line .date {
+.post-index .info .info-meta  .line .date {
   font-style: italic;
   margin:0 15px 5px 0;
   opacity: 0.8;
@@ -596,7 +596,7 @@ body {
   justify-content: center;
 }
 
-.post-index .info .line a.link-cat {
+.post-index .info .info-meta .line a.link-cat {
   background-color: #00838f;
   background-image: transparent;
   color:#fff;
@@ -609,17 +609,70 @@ body {
   transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1) 1s;
 }
 
-.post-index .info .line a.link-cat:hover {
+.post-index .info .info-meta .line a.link-cat:hover {
   background-image: linear-gradient(135deg, rgba(0, 0, 0, 0.1) 25%, transparent 25%, transparent 50%, rgba(0, 0, 0, 0.1) 50%, rgba(0, 0, 0, 0.1) 75%, transparent 75%, transparent);
   transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1) 1s;
 }
 
 .post-index .info .text {
   padding-bottom:20px;
+  font-size:16px;
 }
 
 .post-index .info .text p:last-child {
   margin:0;
+}
+
+.post-index .meta {
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+}
+
+.post-index a.read-more {
+  padding: 5px 10px;
+  display: flex;
+  align-self: center;
+  align-items: center;
+  background: #00838f;
+  background-image: none;
+  border-radius:5px;
+  color:#fefefe;
+  margin: 0 0 10px;
+  border: 1px solid #00707a;
+}
+
+.post-index a.read-more:hover {
+  background-image: linear-gradient(135deg, rgba(0, 0, 0, 0.1) 25%, transparent 25%, transparent 50%, rgba(0, 0, 0, 0.1) 50%, rgba(0, 0, 0, 0.1) 75%, transparent 75%, transparent);
+}
+
+.post-index a.read-more i {
+  margin-left:5px;
+}
+
+.post-index .meta .line {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items:center;
+}
+
+.post-index .meta .line .author {
+  color:rgba(0, 0, 0, 0.5);
+  letter-spacing: 2px;
+  font-size:13px;
+  line-height: 1;
+}
+
+.post-index .meta .line .author a {
+  text-transform: uppercase;
+  font-weight: 500;
+  color:rgba(0, 0, 0, 0.8);
+}
+
+.post-index .meta .line .author a:hover {
+  color:rgba(0, 0, 0, 0.5);
 }
 
 .main {
