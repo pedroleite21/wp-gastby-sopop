@@ -55,7 +55,7 @@ class IndexPosts extends Component {
                             <h3>{node.title}</h3>
                         </Link>
 
-                        <div dangerouslySetInnerHTML={{ __html: node.excerpt }}></div>
+                        <div className="text" dangerouslySetInnerHTML={{ __html: node.excerpt }}></div>
                     </div>
 
                     <div className="meta">

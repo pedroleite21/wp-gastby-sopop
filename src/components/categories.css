@@ -1,0 +1,32 @@
+.post-index.reviews .info {
+    border-color: #7C0B2B;
+}
+
+.post-index .info a.link-cat.reviews {
+    background-color: #7C0B2B;
+}
+
+.post-index.musica .info {
+    border-color: #04773B;
+}
+
+.post-index .info a.link-cat.musica {
+    background-color: #04773B;
+}
+ 
+.post-index.series .info {
+    border-color: #4F759B;
+}
+
+.post-index .info a.link-cat.series {
+    background-color: #4F759B ;
+}
+
+
+.post-index.filmes .info {
+    border-color: #4E0250;
+}
+
+.post-index .info a.link-cat.filmes {
+    background-color: #4E0250;
+}
