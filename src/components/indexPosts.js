@@ -59,7 +59,9 @@ class IndexPosts extends Component {
                     <div className="info">
                         <div className="info-meta">
                             {(node.author.avatar_urls && node.acf.featured_image) && (
-                                <img alt={node.author.name} src={node.author.avatar_urls.wordpress_96} className="author-img" />
+                                <Link to={`/author/${node.author.slug}`}>
+                                    <img alt={node.author.name} src={node.author.avatar_urls.wordpress_96} className="author-img" />
+                                </Link>
                             )}
 
                             <div className="line">
@@ -98,7 +100,7 @@ class IndexPosts extends Component {
 
                             <div className="line">
                                 <div className="author">
-                                    por <a>{node.author.name}</a>
+                                    por <Link to={`/author/${node.author.slug}`}>{node.author.name}</Link>
                                 </div>
 
                                 <SocialMedia key="social" node={node} />
