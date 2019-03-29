@@ -3,7 +3,7 @@
 }
 
 .post-index .info a.link-cat.reviews {
-    background-color: #7C0B2B;
+    background-color: #7C0B2B !important;
 }
 
 .post-index.musica .info {
@@ -11,7 +11,7 @@
 }
 
 .post-index .info a.link-cat.musica {
-    background-color: #04773B;
+    background-color: #04773B !important;
 }
  
 .post-index.series .info {
@@ -19,14 +19,13 @@
 }
 
 .post-index .info a.link-cat.series {
-    background-color: #4F759B ;
+    background-color: #4F759B !important;
 }
-
 
 .post-index.filmes .info {
     border-color: #4E0250;
 }
 
 .post-index .info a.link-cat.filmes {
-    background-color: #4E0250;
+    background-color: #4E0250 !important;
 }
